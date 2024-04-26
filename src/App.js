@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import MyClassComponent from './ClassComponent';
+import MyFunctionalComponent from './FunctionalComponent';
 
 function App() {
   return (
@@ -9,13 +11,19 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <div>
+          <MyClassComponent text={"I am from app"} number={100}/>
+          <MyFunctionalComponent text={"I am from app"} number={100}/>
+        </div>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React JS
         </a>
       </header>
     </div>

@@ -1,13 +1,35 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MyClassComponent from './ClassComponent';
 import MyFunctionalComponent from './FunctionalComponent';
+import { LoginForm } from './LoginForm';
+import { CompA } from './components/CompA';
+import { CompB } from './components/CompB';
+import LifeCycleMethods from './components/LifeCycleMethods';
 
 function App() {
+
+  const [localSwitch, toggleSwitch] = React.useState(true);
+
+  const [count, setCount] = React.useState(0);
+
+  const updateToggleSwitch = () => {
+    toggleSwitch(!localSwitch);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+        <button onClick={() => updateToggleSwitch()}>Toggle</button>
+        <button onClick={() => setCount(count + 1)}>+</button>
+        <button onClick={() => setCount(count - 1)}>-</button>
+        {/* <LifeCycleMethods count={count}/> */}
+        <CompA propSwitch = {localSwitch}/>
+        <CompB />
+        {/* <LoginForm /> */}
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -24,7 +46,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React JS
-        </a>
+        </a> */}
       </header>
     </div>
   );
